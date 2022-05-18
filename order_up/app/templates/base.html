@@ -9,5 +9,10 @@
   </head>
   <body>
     {% block content %}{% endblock %}
+    <form method="post" action="{{ url_for('session.logout') }}">
+      {% if current_user.name %}
+      <button>Logout</button>
+      {% endif %}
+    </form>
   </body>
 </html>
